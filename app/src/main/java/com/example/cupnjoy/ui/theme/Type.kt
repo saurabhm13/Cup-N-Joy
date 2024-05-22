@@ -25,7 +25,7 @@ val Typography = Typography(
 
     titleLarge = TextStyle(
         fontFamily = tsukimiRounded,
-        fontWeight = FontWeight.Bold,
+        fontWeight = FontWeight.Medium,
         fontSize = 20.sp
     ),
 
