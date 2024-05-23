@@ -69,4 +69,8 @@ dependencies {
 
     // Coil
     implementation("io.coil-kt:coil-compose:2.6.0")
+
+    // Blur effect
+    implementation("dev.chrisbanes.haze:haze-jetpack-compose:0.5.4")
+    implementation("dev.chrisbanes.haze:haze-materials:0.5.4")
 }

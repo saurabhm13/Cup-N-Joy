@@ -19,4 +19,20 @@
     <string name="americano">Americano</string>
     <string name="espresso">Espresso</string>
     <string name="flat_white">Flat White</string>
+
+    <string name="product_details">Product Details</string>
+    <string name="back">Back</string>
+    <string name="add_to_cart">Add to cart</string>
+    <string name="description">Description</string>
+    <string name="size">Size</string>
+
+    <string name="small">Small</string>
+    <string name="medium">Medium</string>
+    <string name="large">Large</string>
+
+    <string name="oat">Oat</string>
+    <string name="soy">Soy</string>
+    <string name="almond">Almond</string>
+    <string name="milk">Milk</string>
+    <string name="buy_now">Buy Now</string>
 </resources>
