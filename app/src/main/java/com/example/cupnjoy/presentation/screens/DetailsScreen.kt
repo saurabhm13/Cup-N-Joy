@@ -180,7 +180,7 @@ private fun ImageSectionAndHighlights(
                 painter = rememberAsyncImagePainter(model = coffeeInfo.image),
                 contentDescription = null,
                 alignment = Alignment.BottomCenter,
-                contentScale = ContentScale.FillHeight
+                contentScale = ContentScale.Crop
             )
 
             val boxModifier = Modifier
