@@ -3,4 +3,20 @@
 
     <string name="onboarding_desc">FIND THE BEST COFFEE FOR YOU</string>
     <string name="get_started">Get Started</string>
+
+    <string name="search">Search</string>
+    <string name="cart">Cart</string>
+    <string name="rating">Rating</string>
+    <string name="favorite">Favorite</string>
+    <string name="details">Details</string>
+    <string name="promo">Promo</string>
+
+    <string name="coffee_of_a_day">Coffee of a day</string>
+    <string name="promo_of_a_day">Promo of a day</string>
+
+    <string name="cappuccino">Cappuccino</string>
+    <string name="cortado">Cortado</string>
+    <string name="americano">Americano</string>
+    <string name="espresso">Espresso</string>
+    <string name="flat_white">Flat White</string>
 </resources>
