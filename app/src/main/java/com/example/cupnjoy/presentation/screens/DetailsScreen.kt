@@ -47,6 +47,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import coil.compose.rememberAsyncImagePainter
 import com.example.cupnjoy.R
 import com.example.cupnjoy.data.Coffee
@@ -61,6 +63,7 @@ import dev.chrisbanes.haze.materials.HazeMaterials
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun DetailsScreen(
+    navController: NavController,
     coffeeInfo: Coffee
 ) {
 
@@ -75,7 +78,9 @@ fun DetailsScreen(
         ), title = {
             Text(stringResource(id = R.string.product_details))
         }, navigationIcon = {
-            IconButton(onClick = {  }) {
+            IconButton(onClick = {
+                navController.popBackStack()
+            }) {
                 Icon(
                     painter = painterResource(id = R.drawable.arrow_left),
                     contentDescription = stringResource(
@@ -373,5 +378,5 @@ private fun CoffeeSize() {
 @Preview
 @Composable
 fun DetailsScreenPreview() {
-    DetailsScreen(coffeeInfo = coffeeList[2])
+    DetailsScreen(navController = rememberNavController(), coffeeInfo = coffeeList[2])
 }

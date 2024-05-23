@@ -42,14 +42,19 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.example.cupnjoy.R
 import com.example.cupnjoy.data.coffeeList
 import com.example.cupnjoy.presentation.components.CoffeeCard
 import com.example.cupnjoy.presentation.components.CustomCurvedShape
+import com.example.cupnjoy.presentation.navigation.Screens
 import com.example.cupnjoy.ui.theme.DarkGrey
 
 @Composable
-fun HomeScreen() {
+fun HomeScreen(
+    navController: NavController
+) {
     Scaffold { innerPadding ->
         Box(
             modifier = Modifier
@@ -93,7 +98,13 @@ fun HomeScreen() {
                     columns = GridCells.Fixed(2),
                     content = {
                         items(coffeeList.size) { index ->
-                            CoffeeCard(coffeeInfo = coffeeList[index])
+                            CoffeeCard(coffeeInfo = coffeeList[index], onClick = {
+                                navController.currentBackStackEntry?.savedStateHandle?.set(
+                                    key = "coffeeInfo",
+                                    value = coffeeList[index]
+                                )
+                                navController.navigate(Screens.DetailsScreen.route)
+                            })
                         }
                     }
                 )
@@ -212,5 +223,5 @@ private fun Search() {
 @Preview
 @Composable
 fun HomeScreenPreview() {
-    HomeScreen()
+    HomeScreen(rememberNavController())
 }

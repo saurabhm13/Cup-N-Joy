@@ -1,5 +1,9 @@
 package com.example.cupnjoy.data
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class Coffee(
     val name: String,
     val description: String,
@@ -7,7 +11,7 @@ data class Coffee(
     val rating: Double,
     val ratingCount: Int,
     val image: String
-)
+): Parcelable
 
 val coffeeList = listOf(
     Coffee(

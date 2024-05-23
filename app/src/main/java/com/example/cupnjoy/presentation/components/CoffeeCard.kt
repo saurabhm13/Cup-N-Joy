@@ -2,6 +2,7 @@ package com.example.cupnjoy.presentation.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -38,10 +39,12 @@ import com.example.cupnjoy.ui.theme.Yellow
 
 @Composable
 fun CoffeeCard(
-    coffeeInfo: Coffee
+    coffeeInfo: Coffee,
+    onClick: () -> Unit
 ) {
     Surface(
-        modifier = Modifier.padding(5.dp),
+        modifier = Modifier.padding(5.dp)
+            .clickable(onClick = onClick),
         shape = RoundedCornerShape(15.dp)
     ) {
 
@@ -131,5 +134,5 @@ fun CoffeeCard(
 @Preview
 @Composable
 fun CoffeeCardPreview() {
-    CoffeeCard(coffeeInfo = coffeeList[0])
+    CoffeeCard(coffeeInfo = coffeeList[0], onClick = {})
 }

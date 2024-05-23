@@ -2,6 +2,7 @@ package com.example.cupnjoy.presentation.screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -31,10 +32,15 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.example.cupnjoy.R
+import com.example.cupnjoy.presentation.navigation.Screens
 
 @Composable
-fun OnboardingScreen() {
+fun OnboardingScreen(
+    navController: NavController
+) {
     Scaffold(
         contentWindowInsets = WindowInsets.navigationBars,
     ) { innerPadding ->
@@ -65,10 +71,10 @@ fun OnboardingScreen() {
                     )
             ) {
 
-                Column (
+                Column(
                     modifier = Modifier.align(Alignment.Center),
                     horizontalAlignment = Alignment.CenterHorizontally
-                ){
+                ) {
                     Text(
                         text = stringResource(id = R.string.onboarding_desc),
                         style = MaterialTheme.typography.headlineLarge,
@@ -77,13 +83,17 @@ fun OnboardingScreen() {
 
                     Spacer(modifier = Modifier.height(40.dp))
 
-                    Surface (
-                        modifier = Modifier,
+                    Surface(
+                        modifier = Modifier
+                            .clickable {
+                                navController.popBackStack()
+                                navController.navigate(Screens.HomeScreen.route)
+                            },
                         shape = RoundedCornerShape(30.dp),
                         color = MaterialTheme.colorScheme.primary
                     ) {
 
-                        Row (
+                        Row(
                             modifier = Modifier.padding(horizontal = 25.dp, vertical = 8.dp),
                             verticalAlignment = Alignment.CenterVertically
                         ) {
@@ -112,5 +122,5 @@ fun OnboardingScreen() {
 @Preview
 @Composable
 fun OnboardingScreenPreview() {
-    OnboardingScreen()
+    OnboardingScreen(rememberNavController())
 }
